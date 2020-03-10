@@ -1,5 +1,7 @@
 package com.example.flow;
-
+//Reference sites
+//https://www.androidauthority.com/use-remote-web-api-within-android-app-617869/
+//https://github.com/obaro/SimpleWebAPI/blob/master/app/src/main/java/com/sample/foo/simplewebapi/MainActivity.java
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
