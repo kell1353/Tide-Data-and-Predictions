@@ -45,7 +45,7 @@ later_day = later.strftime('%Y%m%d')
 later_time = later.strftime("%H:%M")
 
 'Request future tide predictions for an interval from NOAA API'
-response = requests.get("https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=" + current_day + " " + current_time + "&end_date=" + later_day + " " + later_time + "&station=9410230&product=predictions&datum=mllw&units=english&time_zone=lst&application =ports_screen&format=json")
+response = requests.get("https://tidesandcurrents.noaa.gov/api/datagetter?begin_date=" + current_day + " " + current_time + "&end_date=" + later_day + " " + later_time + "&station=9410230&product=predictions&datum=mllw&units=english&time_zone=lst_ldt&application =ports_screen&format=json")
 #print(response.headers.get("content-type"))
 j = response.json()
 tide_heights = []
@@ -78,7 +78,7 @@ def detDay(time):
     if int(time[:2]) < 12: day = 'am'
     else: day = 'pm'
 
-response = requests.get("https://tidesandcurrents.noaa.gov/api/datagetter?date=latest&station=9410230&product=water_level&datum=mllw&units=english&time_zone=lst&application =ports_screen&format=json")
+response = requests.get("https://tidesandcurrents.noaa.gov/api/datagetter?date=latest&station=9410230&product=water_level&datum=mllw&units=english&time_zone=lst_ldt&application =ports_screen&format=json")
 #print(response.headers.get("content-type"))
 j = response.json()
 latest = str(j['data'][0]['v'])
